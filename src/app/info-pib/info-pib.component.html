@@ -1,0 +1,117 @@
+<form class="example-form">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Consumo</mat-label>
+          <input
+            matInput
+            #consumoCode
+            maxlength="5"
+            placeholder="Ej. 94105"
+            value="94043"
+          />
+          <mat-hint align="end">{{ consumoCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Inversión</mat-label>
+          <input
+            matInput
+            #inversionCode
+            maxlength="5"
+            placeholder="Ex. 94105"
+            value="45321"
+          />
+          <mat-hint align="end">{{ inversionCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Gasto Público</mat-label>
+          <input
+            matInput
+            #gastoCode
+            maxlength="5"
+            placeholder="Ex. 94105"
+            value="94043"
+          />
+          <mat-hint align="end">{{ gastoCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Exportaciones</mat-label>
+          <input
+            matInput
+            #exportarCode
+            maxlength="5"
+            placeholder="Ex. 94105"
+            value="94043"
+          />
+          <mat-hint align="end">{{ exportarCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Importaciones</mat-label>
+          <input
+            matInput
+            #postalCode
+            maxlength="5"
+            placeholder="Ex. 94105"
+            value="94043"
+          />
+          <mat-hint align="end">{{ postalCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>
+<br />
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Year -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef>Año</th>
+      <td mat-cell *matCellDef="let element">{{ element.year }}</td>
+    </ng-container>
+
+    <!-- consumo Column -->
+    <ng-container matColumnDef="consumo">
+      <th mat-header-cell *matHeaderCellDef>Consumo</th>
+      <td mat-cell *matCellDef="let element">{{ element.consumo }}</td>
+    </ng-container>
+
+    <!-- inversion Column -->
+    <ng-container matColumnDef="inversion">
+      <th mat-header-cell *matHeaderCellDef>Inversión</th>
+      <td mat-cell *matCellDef="let element">{{ element.inversion }}</td>
+    </ng-container>
+
+    <!-- gasto Column -->
+    <ng-container matColumnDef="gasto">
+      <th mat-header-cell *matHeaderCellDef>Gasto Publico</th>
+      <td mat-cell *matCellDef="let element">{{ element.gasto }}</td>
+    </ng-container>
+
+    <!-- exportacion Column -->
+    <ng-container matColumnDef="exportacion">
+      <th mat-header-cell *matHeaderCellDef>Exportaciones</th>
+      <td mat-cell *matCellDef="let element">{{ element.exportacion }}</td>
+    </ng-container>
+
+    <!-- importacion Column -->
+    <ng-container matColumnDef="importacion">
+      <th mat-header-cell *matHeaderCellDef>Importaciones</th>
+      <td mat-cell *matCellDef="let element">{{ element.importacion }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
