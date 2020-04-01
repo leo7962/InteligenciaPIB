@@ -8,6 +8,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule} from '@angular/material/input';
 import { InfoPibComponent } from './info-pib/info-pib.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatSliderModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
